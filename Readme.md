@@ -24,3 +24,12 @@ now create a symlink to the script in your /usr/bin
 
 It is recommended to enable passwordless ssh for both machines
 
+## Development
+
+As of right now, the 
+> -sy
+> -a
+> -rm
+
+flags aren't working.
+Feel free to create Pull requests
