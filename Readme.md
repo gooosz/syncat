@@ -1,4 +1,4 @@
-A Bash Script combining very few selected, most used by me, command from ssh, scp and sshfs
+A Bash Script combining my most used commands from ssh, scp and sshfs
 
 ## Requirements
 
