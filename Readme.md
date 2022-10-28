@@ -28,7 +28,9 @@ It is recommended to enable passwordless ssh for both machines
 
 As of right now, the 
 > -sy
+
 > -a
+
 > -rm
 
 flags aren't working.
