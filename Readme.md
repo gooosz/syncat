@@ -12,6 +12,10 @@ You have to install these package both on your local and remote systems
 
 ```cd syncat```
 
+Now go into the script by e.g. ```vim syncat``` (or your editor of choice)
+and put your host and remote IPs into the $LAPTOP and $PC vars (doesn't matter which one, as long the corresponding user name is set correctly)
+and their user names into $LAPTOP_USER and $PC_USER
+
 and make the bash script executable by
 
 ```chmod +x syncat```
