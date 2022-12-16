@@ -1,0 +1,7 @@
+ToDo:
+
+exclude files/dir shown in --dry-run from being sent over
+-> maybe functionality like: continue [y/N]: -e {file1,file2}
+for excluding
+-> continue[y/N]: -i {file1,file2}
+only these files will be sent

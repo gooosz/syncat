@@ -34,6 +34,14 @@ REMOTE_USER=""
 UNI="Uni"
 ANIME="/run/media/gooosz/HDD 1TB/Anime/Episodes"
 
+# -- Utils --
+function askForUserPermission() {
+	read -p "Do your wish to continue [y/N]: " confirm && \
+		[[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exit 1
+}
+
+
+
 ## --
 
 function connectViaSSH() {
@@ -70,9 +78,18 @@ function sendFile() {
 	esac
 
 	if [ -d "$src" ]; then
-		scp -r "$src" "$REMOTE_USER@$REMOTE:$dest"
+		# scp -r "$src" "$REMOTE_USER@$REMOTE:$dest"
+		# r: recursively go into directory
+		# p: show progress bar
+		# t: keep modification times of files
+		# v: verbose
+		rsync -rptv --dry-run $src/ "$REMOTE_USER@$REMOTE:$dest"
+		askForUserPermission
+		rsync -rptv $src/ "$REMOTE_USER@$REMOTE:$dest"
 	else
-		scp "$src" "$REMOTE_USER@$REMOTE:$dest"
+		rsync -ptv --dry-run "$src" "$REMOTE_USER@$REMOTE:$dest"
+		askForUserPermission
+		rsync -ptv "$src" "$REMOTE_USER@$REMOTE:$dest"
 	fi
 }
 
